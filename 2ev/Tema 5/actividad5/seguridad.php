@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$timeout = 900; // 15 minutos
+$timeout = 900; 
 
 if (!isset($_SESSION['usuario'])) {
     header("Location: CURSO.PHP");
@@ -13,4 +13,4 @@ if (time() - $_SESSION['ultima'] > $timeout) {
     die("Sesión expirada por inactividad. <a href='CURSO.PHP'>Volver a acceder</a>");
 }
 
-$_SESSION['ultima'] = time(); // refresca actividad
+$_SESSION['ultima'] = time();
