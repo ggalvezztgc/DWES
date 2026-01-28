@@ -1,9 +1,3 @@
-<?php
-$conexion = mysqli_connect("localhost","root","","concesionario")
-or die("Error de conexion");
-mysqli_set_charset($conexion,"utf8");
-?>
-
 <form method="post">
 Matricula: <input type="text" name="matricula">
 <input type="submit" value="Eliminar">
@@ -11,14 +5,16 @@ Matricula: <input type="text" name="matricula">
 
 <?php
 if (isset($_POST['matricula'])) {
+include("conexion.php");
 
 $sql = "DELETE FROM coches WHERE matricula='$_POST[matricula]'";
 mysqli_query($conexion, $sql);
 
 if (mysqli_affected_rows($conexion) > 0)
-  echo "Coche eliminado correctamente";
+  echo "Coche eliminado";
 else
-  echo "El coche no existe";
-}
+  echo "No existe el coche";
+
 mysqli_close($conexion);
+}
 ?>
