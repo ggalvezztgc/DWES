@@ -1,5 +1,7 @@
 <?php
-include("conexion.php");
+$conexion = mysqli_connect("localhost","root","","concesionario")
+or die("Error de conexion");
+mysqli_set_charset($conexion,"utf8");
 
 $sql = "SELECT * FROM coches";
 $resultado = mysqli_query($conexion, $sql);

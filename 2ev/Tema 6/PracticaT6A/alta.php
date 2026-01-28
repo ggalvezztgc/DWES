@@ -1,3 +1,9 @@
+<?php
+$conexion = mysqli_connect("localhost","root","","concesionario")
+or die("Error de conexion");
+mysqli_set_charset($conexion,"utf8");
+?>
+
 <form method="post">
 Matricula: <input type="text" name="matricula"><br>
 Marca: <input type="text" name="marca"><br>
@@ -13,7 +19,6 @@ Extras: <input type="text" name="extras"><br>
 
 <?php
 if (isset($_POST['boton'])) {
-include("conexion.php");
 
 $sql = "INSERT INTO coches VALUES (
 '$_POST[matricula]',
@@ -27,9 +32,9 @@ $_POST[precio],
 '$_POST[extras]'
 )";
 
-mysqli_query($conexion, $sql) or die("Error");
+mysqli_query($conexion, $sql) or die("Error al insertar");
 echo "Coche insertado correctamente";
 
-mysqli_close($conexion);
 }
+mysqli_close($conexion);
 ?>

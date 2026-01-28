@@ -1,3 +1,9 @@
+<?php
+$conexion = mysqli_connect("localhost","root","","concesionario")
+or die("Error de conexion");
+mysqli_set_charset($conexion,"utf8");
+?>
+
 <form method="post">
 Matricula: <input type="text" name="matricula"><br>
 Nuevo precio: <input type="text" name="precio"><br>
@@ -6,14 +12,12 @@ Nuevo precio: <input type="text" name="precio"><br>
 
 <?php
 if (isset($_POST['precio'])) {
-include("conexion.php");
 
 $sql = "UPDATE coches SET precio=$_POST[precio]
 WHERE matricula='$_POST[matricula]'";
 
 mysqli_query($conexion, $sql);
-echo "Precio actualizado";
-
-mysqli_close($conexion);
+echo "Precio actualizado correctamente";
 }
+mysqli_close($conexion);
 ?>
