@@ -1,19 +1,120 @@
+/* RESET GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FONDO GENERAL */
 body {
-    font-family: Arial;
-    margin: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-table {
-    border-collapse: collapse;
+/* CONTENEDOR PRINCIPAL */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    width: 450px;
+    text-align: center;
+    animation: fadeIn 0.6s ease-in-out;
 }
 
-td, th {
-    border: 1px solid black;
-    padding: 5px;
+/* TÍTULOS */
+h1 {
+    margin-bottom: 25px;
+    color: #203a43;
+    font-size: 28px;
 }
 
-.barra {
-    height: 20px;
-    background: blue;
-    margin-bottom: 10px;
+/* SUBTÍTULOS */
+h2 {
+    margin-bottom: 20px;
+    color: #2c5364;
+}
+
+/* LISTA DEL INDEX */
+ul {
+    list-style: none;
+}
+
+ul li {
+    margin: 15px 0;
+}
+
+/* BOTONES GENERALES */
+a, button {
+    text-decoration: none;
+    background: linear-gradient(135deg, #2c5364, #203a43);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-weight: bold;
+}
+
+a:hover, button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* FORMULARIOS */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #2c5364;
+    box-shadow: 0 0 5px rgba(44, 83, 100, 0.5);
+}
+
+/* RESULTADOS */
+.resultado {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e9f5f9;
+    border-left: 5px solid #2c5364;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* BOTÓN VOLVER */
+.volver {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #203a43;
+    padding: 8px 15px;
+    border-radius: 6px;
+}
+
+/* ANIMACIÓN */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
